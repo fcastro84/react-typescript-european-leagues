@@ -15,7 +15,7 @@ export const TeamDetails = () => {
     })
 
     const handleBack = () => {
-        navigate('/', { state: { id: Number(idLeague) }} )
+        navigate('/countries-league', { state: { id: Number(idLeague) }} )
     }
   return (
     <>

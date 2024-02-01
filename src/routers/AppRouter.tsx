@@ -9,6 +9,7 @@ const AppRouter = () => {
     <HashRouter>
         <Routes>
             <Route path="/" element={<CountriesLeagues />}></Route>
+            <Route path="/countries-league" element={<CountriesLeagues />}></Route>
             <Route path="/team/:idLeague/:idTeam" element={<TeamDetails />}></Route>
         </Routes>
     </HashRouter>

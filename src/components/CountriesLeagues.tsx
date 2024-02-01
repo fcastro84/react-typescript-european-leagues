@@ -18,6 +18,7 @@ function CountriesLeagues() {
     const handleeClickCountrie = (codeCountrie: number) => () => {
         setIdSelected(codeCountrie)
         window.history.replaceState(null, '', '/')
+        window.history.replaceState(null, '', '/countries-league')
     }
     
   return (
