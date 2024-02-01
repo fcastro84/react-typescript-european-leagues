@@ -1,6 +1,7 @@
 {
   "name": "react-typescript-european-leagues",
   "private": true,
+  "homepage": "https://fcastro84.github.io/react-typescript-european-leagues/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
