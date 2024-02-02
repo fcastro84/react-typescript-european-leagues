@@ -39,7 +39,11 @@ function CountriesLeagues() {
                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                     {
                         COUNTRIES.map( country => (
-                        <li key={country.id} className="text-xl" id={`${country.name}Select`}><a className={`${idSelected === country.code ? 'link-secondary': '' } link`}  onClick={handleeClickCountrie(country.code)}>{country.name}</a></li> 
+                        <li key={country.id} className="text-xl" id={`${country.name}Select`}>
+                            <button type="button" className={`${idSelected === country.code ? 'btn-active text-pink-500': 'text-gray-200' } btn btn-link`}  onClick={handleeClickCountrie(country.code)}>
+                                {country.name}
+                            </button>
+                        </li> 
                         ))
                     }
                     
@@ -52,7 +56,11 @@ function CountriesLeagues() {
                 <ul className="menu menu-horizontal px-1">
                 {
                         COUNTRIES.map( country => (
-                        <li key={country.id} className="text-xl" id={`${country.name}Select`}><a className={`${idSelected === country.code ? 'link-secondary': '' } link`} onClick={handleeClickCountrie(country.code)}>{country.name}</a></li> 
+                        <li key={country.id} className="text-xl" id={`${country.name}Select`}>
+                            <button type="button" className={`${idSelected === country.code ? 'btn-active text-pink-500': 'text-gray-200' } btn btn-link`}  onClick={handleeClickCountrie(country.code)}>
+                                {country.name}
+                            </button>
+                        </li> 
                         ))
                     }
                 </ul>
