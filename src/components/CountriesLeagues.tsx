@@ -1,19 +1,12 @@
 import { useState } from "react"
 import { COUNTRIES } from "../data/countries"
 import TeamList from "./teams/TeamList"
-import { useQuery } from "@tanstack/react-query"
-import fetchTeamsByCountry from "../services/fetchTeamsByCountry"
+import { useCountriesLeague } from "../hooks/useCountriesLeague"
 
 function CountriesLeagues() {
     
     const [idSelected, setIdSelected] = useState( window.history.state?.usr?.id ?? 39)
-    const {data, isLoading} = useQuery({
-        queryKey: ['league', idSelected],
-        queryFn: () => fetchTeamsByCountry(idSelected),
-        refetchOnWindowFocus: false,
-        gcTime: 60 * 60 * 1000,
-        staleTime: 60 * 60 * 1000
-    })
+    const { data, isLoading } = useCountriesLeague(idSelected)
 
     const handleeClickCountrie = (codeCountrie: number) => () => {
         setIdSelected(codeCountrie)

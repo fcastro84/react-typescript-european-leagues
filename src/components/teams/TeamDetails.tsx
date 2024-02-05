@@ -1,18 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom"
-import fetchTeamByIdLeagueIdTeam from "../../services/fetchTeamByIdLeagueIdTeam"
-import { useQuery } from "@tanstack/react-query"
+import { useTeamResult } from "../../hooks/useTeamResult";
 
 
 export const TeamDetails = () => {
     const { idLeague, idTeam} = useParams()
     const navigate = useNavigate();
-    const {data, isLoading} = useQuery({
-        queryKey: ['team', {idLeague, idTeam}],
-        queryFn: () => fetchTeamByIdLeagueIdTeam(Number(idTeam)),
-        refetchOnWindowFocus: false,
-        gcTime: 60 * 60 * 1000,
-        staleTime: 60 * 60 * 1000
-    })
+    const { data, isLoading} = useTeamResult(idLeague, idTeam)
+    
 
     const handleBack = () => {
         navigate('/countries-league', { state: { id: Number(idLeague) }} )
